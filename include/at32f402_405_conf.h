@@ -3,7 +3,8 @@
   * @file     at32f402_405_conf.h
   * @brief    at32f402_405 config header file
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  *
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -29,14 +30,6 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-
-/** @addtogroup AT32F405_periph_template
-  * @{
-  */
-
-/** @addtogroup 405_Library_configuration Library_configuration
-  * @{
-  */
 
 /**
   * @brief in the following line adjust the value of high speed external crystal (hext)
@@ -149,14 +142,6 @@ extern "C" {
 #ifdef WWDT_MODULE_ENABLED
 #include "at32f402_405_wwdt.h"
 #endif
-
-/**
-  * @}
-  */
-
-  /**
-  * @}
-  */
 
 #ifdef __cplusplus
 }

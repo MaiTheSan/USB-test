@@ -3,7 +3,8 @@
   * @file     at32f402_405_clock.c
   * @brief    system clock config program
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  *
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -24,14 +25,6 @@
 
 /* includes ------------------------------------------------------------------*/
 #include "at32f402_405_clock.h"
-
-/** @addtogroup AT32F405_periph_template
-  * @{
-  */
-
-/** @addtogroup 405_System_clock_configuration System_clock_configuration
-  * @{
-  */
 
 /**
   * @brief  system clock config program
@@ -113,12 +106,23 @@ void system_clock_config(void)
 
   /* update system_core_clock global variable */
   system_core_clock_update();
+
+#ifdef AT32F405xx
+  /*
+    AT32405 OTGHS PHY not initialized, resulting in high power consumption
+    Solutions:
+    1. If OTGHS is not used, call the "reduce_power_consumption" function to reduce power consumption.
+       PLL or HEXT should be enabled when calling this function.
+       Example: reduce_power_consumption();
+
+    2. If OTGHS is required, initialize OTGHS to reduce power consumption, without the need to call this function.
+
+       for more detailed information. please refer to the faq document FAQ0148.
+  */
+#endif
+
+#ifdef AT32F402xx
+  /* reduce power comsumption */
+  reduce_power_consumption();
+#endif
 }
-
-/**
-  * @}
-  */
-
-/**
-  * @}
-  */

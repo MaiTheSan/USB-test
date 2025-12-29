@@ -3,7 +3,8 @@
   * @file     at32f402_405_int.c
   * @brief    main interrupt service routines.
   **************************************************************************
-  *                       Copyright notice & Disclaimer
+  *
+  * Copyright (c) 2025, Artery Technology, All rights reserved.
   *
   * The software Board Support Package (BSP) that is made available to
   * download from Artery official website is the copyrighted work of Artery.
@@ -25,11 +26,11 @@
 /* includes ------------------------------------------------------------------*/
 #include "at32f402_405_int.h"
 
-/** @addtogroup AT32F405_periph_template
+/** @addtogroup AT32F405_periph_examples
   * @{
   */
 
-/** @addtogroup 405_LED_toggle
+/** @addtogroup 405_USB_host_hid
   * @{
   */
 
